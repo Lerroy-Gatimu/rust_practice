@@ -1,4 +1,5 @@
 mod minor;
+use std::collections::HashMap;
 
 fn simple_math() {
     let add = 5 + 3;
@@ -180,8 +181,29 @@ fn dsa() {
     //vectors are resizable arrays
     let mut a = vec!["1", "2"];
     a.push("3");
-    println!("Third item: {}", a[2])
+    println!("Third item: {}", a[2]);
+
+    //Tuples
+    //A tuple can hold multiple values of different types. It is useful when grouping different types together. You access tuple elements using a dot and an index number, like person.1, etc
+    let b = (1, "Me", true);
+    println!("{}{}{}", b.0, b.1, b.2);
+
+    /*
+    A HashMap stores key-value pairs. It lets you look up a value using a key.
+    To use HashMap, you must import it from the standard library.
+    */
+    let mut capital_cities = HashMap::new();
+    capital_cities.insert("Kenya", "Nairobi");
+    capital_cities.insert("Canada", "Ottawa");
+    println!("The capital of Kenya is {}", capital_cities["Kenya"]);
+
+    let fruits_2 = ["apple", "banana", "orange"];
+    for fruit in fruits_2 {
+        println!("I like {}.", fruit);
+    }
 }
+
+
 
 fn main() {
     let name: &str = "Lerrize";
@@ -203,4 +225,10 @@ fn main() {
     borrowing();
     import();
     dsa();
+    minor::arrays_practice();
+    minor::vector_borrowing();
+    minor::tuples_prac();
+    minor::hashmaps();
+    minor::structs();
+    minor::enums();
 }
